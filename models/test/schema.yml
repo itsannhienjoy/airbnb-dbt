@@ -1,6 +1,6 @@
 models:
   - name: dim_listings_cleansed
-    description: "Unique identifier for each listing."
+    description: "Cleansed dimension table for Airbnb listings."
     columns:
       - name: listing_id
         description: "Unique identifier for each listing."
@@ -23,6 +23,10 @@ models:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
 
       - name: minimum_nights
-        description: "Minimum number of nights required for booking."
+        description: '{{ doc("dim_listings_cleansed_minimum_nights") }}'
         tests:
           - positive_value
+
+    tests:
+          - no_nulls_in_columns
+
