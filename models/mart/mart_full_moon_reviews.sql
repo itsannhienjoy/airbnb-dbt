@@ -1,6 +1,7 @@
 {{ 
     config(
         materialized = 'table',
+        alias = "mart_fullmoon_reviews"
     )
 }}
 WITH fct_reviews AS (

@@ -1,7 +1,15 @@
-WITH raw_listings AS (
-    SELECT *
-    FROM AIRBNB.RAW.RAW_LISTINGS
+{{ config(
+  materialized = "table",  
+  tags = ["staging"]
+) }}
+
+with raw_listings as (
+
+  select * 
+  from {{ source('airbnb','listings') }}   
+
 )
+
 SELECT id AS listing_id,
     name AS listing_name,
     listing_url,
