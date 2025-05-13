@@ -6,6 +6,14 @@ Data is collected from a case study Airbnb from Amazon Web Services
 Below is the schema for our raw Airbnb tables, as defined in our `sources:` block. 
 ![Airbnb Source Schema](./dataschema.png)
 
+## Snowflake Preview
+
+Marts Table List and Row Counts
+![Snowflake Databases](./snowschema.png)
+
+A sample query
+![Sample Query](./query.png)
+
 ## Lineage Graph
 ![dbt Lineage Graph](./lineage_graph.png)
 
